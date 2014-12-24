@@ -1,0 +1,280 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline:none;
+}
+body{
+background: url("../images/bg.png") #FFFFFF;
+    font:14px Arial, Tahoma, sans-serif; 
+}
+a{
+	text-decoration:none;
+}
+.b5radius{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+.b3radius_down{
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -ms-border-bottom-left-radius: 3px;
+    -khtml-border-bottom-left-radius: 3px;
+    border_bottom-right-radius 3px;
+    -webkit-border_bottom-right-radius 3px;
+    -o-border_bottom-right-radius 3px;
+    -moz-border_bottom-right-radius 3px;
+    -ms-border_bottom-right-radius 3px;
+    -khtml-border_bottom-right-radius 3px;
+}
+
+#page_align{
+	width: 1300px;
+	margin:0px auto;
+	background:url(../images/pagebg.png)  #FFFFFF;
+    box-shadow: 0px 2px 3px #DDDDDD;
+	-webkit-box-shadow: 0px 1px 3px #DDDDDD;
+	-o-box-shadow: 0px 1px 3px #DDDDDD;
+	-moz-box-shadow: 0px 1px 3px #DDDDDD;
+    overflow: hidden;
+}
+#header{
+    height: 147px;
+    width: 1300px;
+    border-bottom: solid 3px #DDDDDD;
+    background: #EEA081;
+
+}
+#header_nav{
+height: 45px;
+    border-bottom: solid 1px #BC491C;
+    background: #DD4814;
+}
+#header_nav ul{
+list-style: none;
+}
+#header_nav ul li{
+float: left;
+border-right: solid 1px #F1F1F1;
+}
+
+#header_nav ul li a:last-child{
+    border-right:none;
+}
+#header_nav ul li a{
+    color: #FFF;
+    display:block;
+    line-height: 45px;
+    padding: 0px 7px;
+}
+#header_nav ul li a:hover{
+    background: #B7390F;
+}
+input[name=topsearch]{
+    float: right;
+    margin-right:5px;
+    height:30px;
+    weight:150px;
+    margin-top:50px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
+    padding: 0px 5px;
+}
+.registration{
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 3px;
+    border: 0;
+    outline: 0;
+    
+}
+.enter{
+    width: 100px;
+    margin-left: 750px;
+    margin-top: -95px;
+    border: 0;
+    outline: 0;
+}
+.login {
+    width: 360px;
+    margin-top: 160px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-left: 500px;
+    border: solid 1px #DD4814;
+    text-align: center;
+    background: #EEA081;
+}
+.loginform{
+     width: 360px;
+     padding: 30px;
+     text-align: center;
+
+}
+input[name="login"],  [name="r_password"], [name ="new_password"]{
+    width: 270px;
+    margin-right:5px;
+    height:30px;
+    margin-top:5px;
+    margin-bottom:8px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
+    padding: 10px 5px;
+
+}
+.search_img{
+    float:right;
+    margin-top: 55px;
+    margin-right:5px;
+}
+.sidebar{
+    width: 285px;
+    margin: 10px;
+    border-right: solid 3px #FB9797;
+    float: left;
+    background: url(../images/sb.png) #BDBDBD;
+
+}
+.sidebar_menu a{
+    display: block;
+    margin: 20px 0;
+    color: #B7390F;
+    text-align: center;
+}
+.sidebar_menu a:hover{
+    color: #671F01;
+}
+.content{
+ 
+    float:right;
+    width: 1000px;
+    margin-top: -115px;
+}
+input[name=postTitle] {
+    width: 953px;
+    height: 18px;
+   margin-left: 20px;
+   clear: both;
+}
+textarea[name=postM_desk] {
+    margin-left: 20px;
+    clear: both;
+}
+textarea[name=postDesk] {
+    margin-left: 20px;
+    margin-bottom: 20px; 
+    clear: both;   
+}
+.data{
+    margin-right: 10px;
+    margin-bottom: 10px; 
+    text-align: right;
+}
+.article{
+    width: 960px;   
+    margin: 10px;
+    padding: 10px;
+}
+.article img{
+    float: left;
+     margin-right: 15px;
+}
+.article p{
+    padding-right: 10px;
+    text-indent: 15px;
+
+}
+.article:hover{
+    background: #eeeeee;
+}
+.article_title{
+   text-align: center;
+}
+.desk_view{
+     padding: 10px;
+    text-indent: 15px;
+}
+.footer{
+    background: #EEA081;
+    height: 16px;
+    width: 100%;
+    padding: 10px;
+    color: #cccccc;
+   
+    clear: both;
+
+      
+}
+.footer_adm{
+      text-align: left;
+      float: left; 
+}
+.footer_text{
+
+    text-align: center;
+  
+}
+.footer:hover{
+    background: #E17647;
+    color: #CFBBB4;
+}
+.clr{
+    clear:both;
+}
+/*Users part////////////////////////////////*/
+.viewUsers{
+    height: 105px;
+    width: 955px;
+    border: solid 1px #EEA081;
+    margin: 10px;
+    margin-bottom: -5px;
+    padding: 7px;
+}
+.usermenu{
+    width: 250px;
+    margin-left:750px;
+    height:30px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
+    padding: 0px 5px;
+}
+.log1{
+    margin: 5px;
+    padding:  5px;
+    padding-right: 55px;
+    padding-left: 55px;
+    background: white;
+}
+.log1:hover{
+    background: #EEEEEE;
+}
+.log{
+    margin: 5px;
+    padding:  5px;
+    background: white;
+    padding-left: 35px;
+    padding-right: 30px;
+}
+.log:hover{
+    background: #EEEEEE;
+}
+.log2{
+    padding:  5px;
+    background: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.log2:hover{
+        background: #EEEEEE;
+}
+input[id="addNewsSend"]{
+    margin-left: 645px;
+}
+.editCurrentUserFild{
+    margin-left: 150px;
+}
