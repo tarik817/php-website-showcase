@@ -1,2 +1,5 @@
 # PHPStorm project
 .idea/
+# Windows preview
+Thumbs.db
+
