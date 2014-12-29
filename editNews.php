@@ -8,11 +8,11 @@ include("conect.php");
 <html>
 <head>
     <title>test for internetdevels</title>
-    <meta charset="iso-8859-5">
+    <meta charset="utf-8">
 
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>

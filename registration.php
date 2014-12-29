@@ -57,7 +57,7 @@ if(isset ($_POST['news_go'])){
 
 ?>
 <meta charset="utf-8">
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
 <div class ="login">
 	<h1>Реєстрація</h1>
 	<form name="loginform" id="loginform" action="" method="POST">

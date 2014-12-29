@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("conect.php");
+echo session_name();
 
 ?>
 
@@ -9,7 +10,7 @@ include("conect.php");
 <head>
     <title>test for internetdevels</title>
     <meta charset="utf-8">
-    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 

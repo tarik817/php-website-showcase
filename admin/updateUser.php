@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo session_name();
 include("../conect.php");
 
 

@@ -21,7 +21,7 @@ if(isset($_POST['enter_go'])){
     }
 }
 ?>
-<meta charset="iso-8859-5">
+<meta charset="utf-8">
 <link href="../css/main.css" rel="stylesheet" type="text/css">
 <div class ="login">
     <h2>ПАНЕЛЬ АДМІНІСТРАТОРА</h2>

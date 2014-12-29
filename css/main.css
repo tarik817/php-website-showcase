@@ -116,7 +116,7 @@ input[name=topsearch]{
      text-align: center;
 
 }
-input[name="login"],  [name="r_password"], [name ="new_password"]{
+input[name="login"], [name="password"], [name="r_password"], [name ="new_password"]{
     width: 270px;
     margin-right:5px;
     height:30px;
@@ -278,3 +278,33 @@ input[id="addNewsSend"]{
 .editCurrentUserFild{
     margin-left: 150px;
 }
+/*////////////////випаданння списку///////*/
+
+ul.dropdown li { position: relative; }
+ ul.dropdown,
+ ul.dropdown-inside {
+ list-style-type: none;
+ padding: 0;
+ }
+ ul.dropdown-inside {
+ position: absolute;
+ left: -9999px;
+ }
+ ul.dropdown li.dropdown-top {
+ display: inline;
+ float: left;
+ margin: 0 1px 0 0;
+ }
+ ul.dropdown li.dropdown-top a {
+ padding: 3px 30px 4px;
+ display: block;
+ }
+ ul.dropdown a.dropdown-top { background: #fff; }
+ ul.dropdown a.dropdown-top:hover { padding: 2px 30px 5px; }
+ ul.dropdown li.dropdown-top:hover .dropdown-inside {
+ display: block;
+ left: 0;
+ }
+ ul.dropdown .dropdown-inside { background: #fff; }
+ ul.dropdown .dropdown-inside a:hover { background: #efefef; }
+ ul.dropdown a.dropdown-top:hover { background: #efefef; }
