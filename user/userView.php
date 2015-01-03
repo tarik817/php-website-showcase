@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['session_username'];
 include("../conect.php");
 
 ?>
@@ -10,7 +9,10 @@ include("../conect.php");
 <head>
     <title>test for internetdevels</title>
     <meta charset="utf-8">
+
+
     <link href="../css/main.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
@@ -22,32 +24,35 @@ include("../conect.php");
     <div id="header" class="b3radius_down">
         <div id="header_nav">
             <ul>
-                <li><a href="userView.php">Головна</li>
+                <li><a href="index.php">Головна</li>
                 <li><a href=#>Зворотній звязок</li>
 
             </ul>
 
             <form method="" action="">
-                <a href><img src="../images/search.png" width= "25" class="search_img"></a>
+                <a href><img src="images/search.png" width= "25" class="search_img"></a>
                 <input type="text" name="topsearch" placeholder="Пошук" class="b5radius">
 
             </form>
 
         </div>
         <div class="registration">
-                <div>
-                    
-                        <ul class="dropdown">
-                            <li class="dropdown-top">
-                            <a class="dropdown-top" href="/">Вітаємо </br> <?php echo $_SESSION['session_username'];?></a>
-                            <ul class="dropdown-inside">
-                            <li><a href="users.php">Перегляд списку користувачів</a></li>
-                            <li><a href="#">Редагувати профіль</a></li>
-                            <li><a href="#">Вийти!</a></li>
-                            </ul>
-                            </li>
-                </div>
-                   
+            <div>
+                <a  href="login.php">Вхід</a><br>
+                <a href="registration.php">Реєстрація</a>
+            </div>
+            <div>
+                <form class = "userfield">
+                    <p><select size="" name="">
+                            <option>Поточний користувач</option>
+                            <option>Перегляд списку користувачів</option>
+                            <option>Редагувати профіль</option>
+
+                        </select></p>
+
+
+                </form>
+            </div>
 
 
 
@@ -59,9 +64,8 @@ include("../conect.php");
 
     <div class="sidebar">
         <div class="sidebar_menu">
-            <a href="userView.php">Головна<a>
-                            <a href="users.php">Користувачі<a>
-                                    <a href="#">Зворотній звязок<a>
+            <a href="index.php">Головна<a>
+                    <a href="#">Зворотній звязок<a>
 
 
         </div>
@@ -71,26 +75,31 @@ include("../conect.php");
 
     </div>
     <div class="content">
+
+
+
         <?php
-        //скрипт перегляду скорочених версій сторніок
+        $id= intval($_POST['id']);
+        $result=mysqli_query($conect ,"SELECT * FROM users WHERE id='$id'") or die (mysql_error());
+        $data = mysqli_fetch_array($result);
 
 
-        $result=mysqli_query($conect ,"SELECT * FROM data ") or die (mysql_error());
-        while($data= mysqli_fetch_array($result)){
-
-            echo '<div class="article">
-                    <a  href="#" /><img src="../images\logo2.png" />
-                <div class="article_title"><h2>'.$data["title"].'<h2></div>
-                <div class="desk_view"><p>'.$data["m_desk"].'</p></div>
-
-                <div class="clr"></div>
-                <a  href="view.php?id='.$data["id"].'">Перегляд матеріалу</a>
-
-                    <a  href="#" >Коментувати</a>
-
-                    <div class="data"><p>Дата додавання новини '.date("d.m.y, H:i:s" ,$data["data"]).'</p></div></div>';
-        }
         ?>
+
+        <?php
+
+        echo '<div>
+            <form method="post" action="admin/updateUser.php" >
+               
+                <p><h3>Логін</h3><br><p><textarea name="title" cols="134" rows="2" >'.$data["user"].'</textarea>
+                <p><h3>Електронна адреса</h3><br><p><textarea name="m_desk" cols="134" rows="6" >'.$data["email"].' </textarea>
+                <p><h3>Дата реєстрації</h3><br><p><textarea name="desk" cols="134" rows="18" >'.date("d.m.y, H:i:s" ,$data["date"]).'</textarea>
+                <input type="submit" name="updateUser" id="addNewsSend" value="Редагувати"/>
+             </form>  
+             </div>';
+        ?>
+
+
 
 
     </div>

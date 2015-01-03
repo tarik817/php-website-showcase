@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conect.php");
+include("../conect.php");
 
 ?>
 
@@ -9,7 +9,10 @@ include("conect.php");
 <head>
     <title>test for internetdevels</title>
     <meta charset="utf-8">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+
+
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
@@ -22,7 +25,6 @@ include("conect.php");
         <div id="header_nav">
             <ul>
                 <li><a href="index.php">Головна</li>
-                <li><a href="addNews.php">Сторінка створення матеріалу</li>
                 <li><a href=#>Зворотній звязок</li>
 
             </ul>
@@ -35,10 +37,13 @@ include("conect.php");
 
         </div>
         <div class="registration">
-            <?php if(isset($_SESSION['session_username'])){ ?>
             <div>
-                <form class = "userfield" >
-                    <p><select size="" name="" class="usermenu b5radius">
+                <a  href="login.php">Вхід</a><br>
+                <a href="registration.php">Реєстрація</a>
+            </div>
+            <div>
+                <form class = "userfield">
+                    <p><select size="" name="">
                             <option>Поточний користувач</option>
                             <option>Перегляд списку користувачів</option>
                             <option>Редагувати профіль</option>
@@ -48,23 +53,19 @@ include("conect.php");
 
                 </form>
             </div>
-       <?php } ?> 
-            <div>
-                <a  href="login.php" class = "log1 b5radius">Вхід</a><br><br>
-                <a href="registration.php" class = "log b5radius">Реєстрація</a>
-            </div>
-
 
 
 
 
         </div>
     </div>
+
+
+
     <div class="sidebar">
         <div class="sidebar_menu">
             <a href="index.php">Головна<a>
-                    <a href="addNews.php">Сторінка створення матеріалу<a>
-                            <a href="#">Зворотній звязок<a>
+                    <a href="#">Зворотній звязок<a>
 
 
         </div>
@@ -77,15 +78,29 @@ include("conect.php");
 
 
 
-       
-        <form method='post' action="addNews.php" >
-            <p><h3>Загаоловок</h3><br><input type="text" name="title" size="135"/></p>
-            <p><h3>Короткий опис</h3><br><p><textarea name="m_desk" cols="134" rows="5"></textarea></p></p>
-            <p><h3>Повний текст</h3><br><br><p><textarea name="desk" cols="134" rows="15"></textarea></p></p>
-            <input type="submit" name="addNewsSend" id="addNewsSend" value="Готово"/>
+        <?php
+        $id= intval($_POST['id']);
+        $result=mysqli_query($conect ,"SELECT * FROM users WHERE id='$id'") or die (mysql_error());
+        $data = mysqli_fetch_array($result);
 
 
-        </form>
+        ?>
+
+        <?php
+
+        echo '<div>
+            <form method="post" action="admin/updateUser.php" class ="editCurrentUserFild">
+               
+                <p><h3>Логін</h3><br><p><textarea name="title" cols="100" rows="2" >'.$data["user"].'</textarea>
+                <p><h3>Електронна адреса</h3><br><p><textarea name="m_desk" cols="100" rows="2" >'.$data["email"].' </textarea>
+                <p><h3>Дата реєстрації</h3><br>'.date("d.m.y, H:i:s" ,$data["date"]).'
+                <p>
+
+                <input type="submit" name="updateUser" id="addNewsSend" value="Редагувати"/>
+             </form>  
+             </div>';
+        ?>
+
 
 
 

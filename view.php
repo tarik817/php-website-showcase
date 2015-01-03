@@ -2,7 +2,6 @@
 session_start();
 include("conect.php");
 echo session_name();
-
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +34,26 @@ echo session_name();
 
         </div>
         <div class="registration">
-            <div>
-                <a  href="login.php">Вхід</a><br>
-                <a href="registration.php">Реєстрація</a>
+            <?php if(isset($_SESSION['session_username'])){
+                include("authentification/show_user_menu.php");
+                include("scripts/exit_view.php");
+
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("scripts/exit_view.php");
+            }
+             ?>
+
+
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="authentification/registration.php" class = "log b5radius">Реєстрація</a>
             </div>
+            <?php
+            }
+             ?>
+
 
 
 
@@ -63,23 +78,7 @@ echo session_name();
     </div>
     <div class="content">
 
-        <?php
-        if(!isset($_GET["id"])){
-            $id=1;
-
-        }else{
-            $id=$_GET["id"];
-        }
-        $result=mysqli_query($conect ,"SELECT * FROM data WHERE id='$id'") or die (mysql_error());
-        $data= mysqli_fetch_array($result);
-
-        echo '<div class="article_title"><h2>'.$data["title"].'<h2></div>
-                <div class="desk_view"><p>'.$data["desk"].'</p></div>
-                <div class="data"><p>Дата створення новини '.date("d.m.y, H:i:s" ,$data["data"]).'</p></div>
-                <a  href="admin/deleteNews.php?id='.$data["id"].'" >Видалити</a>
-                <div class="clr"></div>';
-
-        ?>
+        <?php include("scripts/outlet_news.php"); ?>
 
 
     </div>

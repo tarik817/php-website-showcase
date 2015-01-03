@@ -9,6 +9,7 @@ background: url("../images/bg.png") #FFFFFF;
 }
 a{
 	text-decoration:none;
+
 }
 .b5radius{
     border-radius: 5px;
@@ -127,6 +128,16 @@ input[name="login"], [name="password"], [name="r_password"], [name ="new_passwor
     padding: 10px 5px;
 
 }
+.input{
+        width: 270px;
+    margin-right:5px;
+    height:30px;
+    margin-top:5px;
+    margin-bottom:8px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
+    padding: 10px 5px;
+}
 .search_img{
     float:right;
     margin-top: 55px;
@@ -243,6 +254,9 @@ textarea[name=postDesk] {
     box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
     padding: 0px 5px;
 }
+.log_relation{
+    margin-top: -60px;
+}
 .log1{
     margin: 5px;
     padding:  5px;
@@ -278,33 +292,25 @@ input[id="addNewsSend"]{
 .editCurrentUserFild{
     margin-left: 150px;
 }
-/*////////////////випаданння списку///////*/
+.userfield{
+    width: 250px;
+    margin-left:-30px;
+    height:72px;
+    border: none;
+    box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
+    padding: 5px 5px;
+    background: white;
+    text-align: center;
+    line-height: 23px;
+    margin-top: 5px;
+}
+.exit{
+    padding:  5px;
+    background: white;
+    padding-right:  45px;
+    padding-left: 10px;
+    margin-top: -20px;
+    margin-left: 1160px;
 
-ul.dropdown li { position: relative; }
- ul.dropdown,
- ul.dropdown-inside {
- list-style-type: none;
- padding: 0;
- }
- ul.dropdown-inside {
- position: absolute;
- left: -9999px;
- }
- ul.dropdown li.dropdown-top {
- display: inline;
- float: left;
- margin: 0 1px 0 0;
- }
- ul.dropdown li.dropdown-top a {
- padding: 3px 30px 4px;
- display: block;
- }
- ul.dropdown a.dropdown-top { background: #fff; }
- ul.dropdown a.dropdown-top:hover { padding: 2px 30px 5px; }
- ul.dropdown li.dropdown-top:hover .dropdown-inside {
- display: block;
- left: 0;
- }
- ul.dropdown .dropdown-inside { background: #fff; }
- ul.dropdown .dropdown-inside a:hover { background: #efefef; }
- ul.dropdown a.dropdown-top:hover { background: #efefef; }
+
+}

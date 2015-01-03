@@ -2,7 +2,6 @@
 session_start();
 include("conect.php");
 echo session_name();
-
 ?>
 
 <!DOCTYPE html>
@@ -35,22 +34,26 @@ echo session_name();
 
         </div>
         <div class="registration">
-            <div>
-                <form class = "userfield" >
-                    <p><select size="" name="" class="usermenu b5radius">
-                            <option>Поточний користувач</option>
-                            <option>Перегляд списку користувачів</option>
-                            <option>Редагувати профіль</option>
+            <?php if(isset($_SESSION['session_username'])){
+                include("authentification/show_user_menu.php");
+                include("scripts/exit_view.php");
 
-                        </select></p>
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("scripts/exit_view.php");
+            }
+             ?>
 
 
-                </form>
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="authentification/registration.php" class = "log b5radius">Реєстрація</a>
             </div>
-            <div>
-                <a  href="login.php" class = "log1 b5radius">Вхід</a><br><br>
-                <a href="registration.php" class = "log b5radius">Реєстрація</a>
-            </div>
+            <?php
+            }
+             ?>
+
 
 
 
@@ -75,22 +78,7 @@ echo session_name();
     </div>
     <div class="content">
         <?php
-        //скрипт перегляду скорочених версій сторніок
-
-//Проблема в відображенні
-        $result=mysqli_query($conect ,"SELECT * FROM data ") or die (mysql_error());
-       
-        while($data= mysqli_fetch_array($result)){
-
-            echo '<div class="article">
-                    <a  href="#" /><img src="images\logo2.png" />
-                <div class="article_title"><h2>'.$data["title"].'<h2></div>
-                <div class="desk_view"><p>'.$data["m_desk"].'</p></div>
-                <a  href="view.php?id='.$data["id"].'">Перегляд матеріалу</a>
-                    <a  href="#" >Коментувати</a>
-                    <div class="data"><p>Дата додавання новини '.date("d.m.y, H:i:s" ,$data["data"]).'</p></div></div>';
-        }
-    
+       include("scripts/index_action.php")
         ?>
 
 
