@@ -9,7 +9,7 @@
 		if(strlen($comment)<150){
 			$query = mysqli_query($conect, "INSERT INTO comments(user, comment, article_id, time) VALUES ('$user_name', '$comment', '$article_id', '$time')") or die(mysqli_error());
 			if($query == true){
-				//echo "<html><head><meta http-equiv='Refresh' content='0; URL=../view.php?id=".$article_id."'></head></html>";
+				echo "<html><head><meta http-equiv='Refresh' content='0; URL=../view.php?id=".$article_id."'></head></html>";
 			}
 		}else{ 
 			$comment= mb_substr($comment, 0, 154);

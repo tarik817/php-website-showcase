@@ -1,10 +1,8 @@
 <?php 
-include("../conect.php");
+session_start();
+if(isset($_POST['vote_b'])){
 
-
-$id = $_SESSION['session_username'];
-$id_article = $_POST['id_article'];
-
-$query = 
-/// дописати контролер
+	include_once("vote_action.php");
+	check_and_push_vote();
+}
 ?>

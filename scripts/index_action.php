@@ -1,5 +1,5 @@
 <?php
-        //скрипт перегляду скорочених версій сторніок
+
 
 
         $result=mysqli_query($conect ,"SELECT * FROM data ") or die (mysql_error());
@@ -16,10 +16,7 @@
                  <a class="button" href="view.php?id='.$data["id"].'">Перегляд матеріалу</a>
 
                 ';
-            if(isset($_SESSION['session_username'])){
-            //include("comments_and_votes/vote_controler.php");
 
-            }
                 
                echo "</div>"; 
         }

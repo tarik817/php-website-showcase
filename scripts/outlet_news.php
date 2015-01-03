@@ -12,6 +12,10 @@
                 <div class="desk_view"><p>'.$data["desk"].'</p></div>
                 <div class="data"><p>Дата створення новини '.date("d.m.y, H:i:s" ,$data["data"]).'</p></div>
                 <div class="clr"></div>';
+                if(isset($_SESSION['session_username'])){
+                    include("comments_and_votes/vote.php");
+
+                }
                 include("comments_and_votes/comment_action.php");
                 show_coment();
 
