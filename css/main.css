@@ -311,6 +311,19 @@ input[id="addNewsSend"]{
     padding-left: 10px;
     margin-top: -20px;
     margin-left: 1160px;
-
-
+}
+.comments_view{
+    border: solid 1px gray;
+    margin: 10px;
+    margin-right: 150px;
+    margin-left: 150px;
+    padding: 10px;
+    line-height: 18px;
+}
+.comment{
+    margin: 10px;
+    margin-right: 150px;
+    margin-left: 152px;
+    padding: 10px;
+    line-height: 18px;
 }

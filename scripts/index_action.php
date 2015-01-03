@@ -17,7 +17,7 @@
 
                 ';
             if(isset($_SESSION['session_username'])){
-            include("comments_and_votes/vote_controler.php");
+            //include("comments_and_votes/vote_controler.php");
 
             }
                 

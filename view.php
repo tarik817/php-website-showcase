@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("conect.php");
-echo session_name();
 ?>
 
 <!DOCTYPE html>
