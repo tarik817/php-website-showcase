@@ -11,7 +11,13 @@
         echo '<div class="article_title"><h2>'.$data["title"].'<h2></div>
                 <div class="desk_view"><p>'.$data["desk"].'</p></div>
                 <div class="data"><p>Дата створення новини '.date("d.m.y, H:i:s" ,$data["data"]).'</p></div>
+                <div class=""><p>Автор публікації '.$data["author"].'</p></div>
                 <div class="clr"></div>';
+                if(isset($_SESSION['session_username'])){
+                    if($_SESSION['session_username']==$data["author"]){
+                        echo '<a href ="edit_news_page.php">Редагувати</a>';
+                    }
+                }
 
                 if(isset($_SESSION['session_username'])){
                     include("comments_and_votes/vote.php");

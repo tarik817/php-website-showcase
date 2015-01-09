@@ -36,12 +36,6 @@ class VoteControler{
 			return $prev;
 	
 	}
-	/*function vote_rating1($article_id){
-		include("vote_action.php");
-		$v2 = new Vote();
-		$try2 = $v2->vote_rating($article_id);
-			return $try2;
-	}*/
 }
 
 ?>

@@ -10,6 +10,8 @@ include("conect.php");
     <title>test for internetdevels</title>
     <meta charset="utf-8">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
 </head>
 <body>
 
@@ -84,7 +86,11 @@ include("conect.php");
     </div>
     <div class="content">
 
-        <?php include("scripts/outlet_news.php"); ?>
+
+
+       <?php include ("scripts/edit_news_view.php"); ?>
+
+
 
 
     </div>
