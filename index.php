@@ -22,6 +22,9 @@ include("conect.php");
         <div id="header_nav">
             <ul>
                 <li><a href="index.php">Головна</li>
+                <?php if(isset($_SESSION['session_username'])){?>
+                <li><a href="add_news_page.php">Додати саттю</li>
+                <?php } ?>
                 <li><a href=#>Зворотній звязок</li>
 
             </ul>
@@ -38,6 +41,9 @@ include("conect.php");
                 include("authentification/show_user_menu.php");
                 include("scripts/exit_view.php");
 
+            }
+            elseif(isset($_SESSION['session_admin'])){
+                 include("scripts/exit_view.php");
             }
              ?>
 
@@ -63,8 +69,11 @@ include("conect.php");
 
     <div class="sidebar">
         <div class="sidebar_menu">
-            <a href="index.php">Головна<a>
-                    <a href="#">Зворотній звязок<a>
+            <a href="index.php">Головна</a>
+            <?php if(isset($_SESSION['session_username'])){?>
+             <a href="add_news_page.php">Додати саттю</a>
+                <?php } ?>
+            <a href="#">Зворотній звязок</a>
 
 
         </div>

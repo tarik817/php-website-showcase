@@ -84,7 +84,7 @@ include("conect.php");
     </div>
     <div class="content">
 
-        <?php include("scripts/outlet_news.php"); ?>
+        <?php include("scripts/add_news_view.php"); ?>
 
 
     </div>
