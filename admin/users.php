@@ -89,9 +89,15 @@ include("../conect.php");
 
 
     </div>
-    <div class="footer">
-        Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+<div class="footer">
+        <div class="footer_adm">
+            <a href="admin/adminLogin.php" class = "log2 b5radius">Вхід в панель адміністаратора</a>
+        </div>
 
+        <div class="footer_text">
+            Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+        </div>
+        <div class="clr"></div>
 
     </div>
 

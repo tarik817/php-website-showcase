@@ -39,9 +39,6 @@ include("conect.php");
                 include("scripts/exit_view.php");
 
             }
-            if(isset($_SESSION['session_admin'])){
-                 include("scripts/exit_view.php");
-            }
              ?>
 
 

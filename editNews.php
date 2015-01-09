@@ -10,7 +10,6 @@ include("conect.php");
     <title>test for internetdevels</title>
     <meta charset="utf-8">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-
 </head>
 <body>
 
@@ -35,22 +34,29 @@ include("conect.php");
 
         </div>
         <div class="registration">
-            <div>
-                <a  href="login.php">Вхід</a><br>
-                <a href="registration.php">Реєстрація</a>
+            <?php if(isset($_SESSION['session_username'])){
+                include("authentification/show_user_menu.php");
+                include("scripts/exit_view.php");
+
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("scripts/exit_view.php");
+            }
+             ?>
+
+
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="authentification/registration.php" class = "log b5radius">Реєстрація</a>
             </div>
-            <div>
-                <form class = "userfield">
-                    <p><select size="" name="">
-                            <option>Поточний користувач</option>
-                            <option>Перегляд списку користувачів</option>
-                            <option>Редагувати профіль</option>
-
-                        </select></p>
+            <?php
+            }
+             ?>
 
 
-                </form>
-            </div>
+
+
 
 
         </div>
@@ -80,9 +86,15 @@ include("conect.php");
 
 
     </div>
-    <div class="footer">
-        Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+<div class="footer">
+        <div class="footer_adm">
+            <a href="admin/adminLogin.php" class = "log2 b5radius">Вхід в панель адміністаратора</a>
+        </div>
 
+        <div class="footer_text">
+            Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+        </div>
+        <div class="clr"></div>
 
     </div>
 

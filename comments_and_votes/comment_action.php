@@ -24,7 +24,8 @@
 	function show_coment(){
 		
 		include("conect.php");
-		$query1=mysqli_query($conect ,"SELECT * FROM comments ORDER BY article_id ") or die (mysql_error());
+		$article_id = $_GET['id'];
+		$query1=mysqli_query($conect ,"SELECT * FROM comments WHERE article_id = '$article_id' ") or die (mysql_error());
 
 		while($result1 = mysqli_fetch_array($query1)){
 			echo'

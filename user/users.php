@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['session_username'];
 include("../conect.php");
 
 ?>
@@ -22,31 +21,39 @@ include("../conect.php");
     <div id="header" class="b3radius_down">
         <div id="header_nav">
             <ul>
-                <li><a href="userView.php">Головна</li>
+                <li><a href="../index.php">Головна</li>
                 <li><a href=#>Зворотній звязок</li>
 
             </ul>
 
             <form method="" action="">
-                <a href><img src="images/search.png" width= "25" class="search_img"></a>
+                <a href><img src="../images/search.png" width= "25" class="search_img"></a>
                 <input type="text" name="topsearch" placeholder="Пошук" class="b5radius">
 
             </form>
 
         </div>
         <div class="registration">
-          <div>
-                    
-                        <ul class="dropdown">
-                            <li class="dropdown-top">
-                            <a class="dropdown-top" href="/">Вітаємо </br> <?php echo $_SESSION['session_username'];?></a>
-                            <ul class="dropdown-inside">
-                            <li><a href="users.php">Перегляд списку користувачів</a></li>
-                            <li><a href="/">Редагувати профіль</a></li>
-                            <li><a href="/">Вийти!</a></li>
-                            </ul>
-                            </li>
-                </div>
+            <?php if(isset($_SESSION['session_username'])){
+                include("../authentification/show_user_menu.php");
+                include("../scripts/exit_view.php");
+
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("../scripts/exit_view.php");
+            }
+             ?>
+
+
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="../authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="../authentification/registration.php" class = "log b5radius">Реєстрація</a>
+            </div>
+            <?php
+            }
+             ?>
+
 
 
 
@@ -56,10 +63,9 @@ include("../conect.php");
     </div>
 
 
-
     <div class="sidebar">
         <div class="sidebar_menu">
-            <a href="userView.php">Головна<a>
+            <a href="../index.php">Головна<a>
                 <a href="users.php">Користувачі<a>
                     <a href="#">Зворотній звязок<a>
 

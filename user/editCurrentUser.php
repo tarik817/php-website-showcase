@@ -9,10 +9,7 @@ include("../conect.php");
 <head>
     <title>test for internetdevels</title>
     <meta charset="utf-8">
-
-
     <link href="../css/main.css" rel="stylesheet" type="text/css">
-
 </head>
 <body>
 
@@ -30,29 +27,34 @@ include("../conect.php");
             </ul>
 
             <form method="" action="">
-                <a href><img src="images/search.png" width= "25" class="search_img"></a>
+                <a href><img src="../images/search.png" width= "25" class="search_img"></a>
                 <input type="text" name="topsearch" placeholder="Пошук" class="b5radius">
 
             </form>
 
         </div>
         <div class="registration">
-            <div>
-                <a  href="login.php">Вхід</a><br>
-                <a href="registration.php">Реєстрація</a>
+            <?php if(isset($_SESSION['session_username'])){
+                include("../authentification/show_user_menu.php");
+                include("../scripts/exit_view.php");
+
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("../scripts/exit_view.php");
+            }
+             ?>
+
+
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="../authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="../authentification/registration.php" class = "log b5radius">Реєстрація</a>
             </div>
-            <div>
-                <form class = "userfield">
-                    <p><select size="" name="">
-                            <option>Поточний користувач</option>
-                            <option>Перегляд списку користувачів</option>
-                            <option>Редагувати профіль</option>
-
-                        </select></p>
+            <?php
+            }
+             ?>
 
 
-                </form>
-            </div>
 
 
 
@@ -60,11 +62,9 @@ include("../conect.php");
         </div>
     </div>
 
-
-
     <div class="sidebar">
         <div class="sidebar_menu">
-            <a href="index.php">Головна<a>
+            <a href="../index.php">Головна<a>
                     <a href="#">Зворотній звязок<a>
 
 

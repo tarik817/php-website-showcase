@@ -22,7 +22,6 @@ include("conect.php");
         <div id="header_nav">
             <ul>
                 <li><a href="index.php">Головна</li>
-                <li><a href="addNews.php">Сторінка створення матеріалу</li>
                 <li><a href=#>Зворотній звязок</li>
 
             </ul>
@@ -35,24 +34,26 @@ include("conect.php");
 
         </div>
         <div class="registration">
-            <?php if(isset($_SESSION['session_username'])){ ?>
-            <div>
-                <form class = "userfield" >
-                    <p><select size="" name="" class="usermenu b5radius">
-                            <option>Поточний користувач</option>
-                            <option>Перегляд списку користувачів</option>
-                            <option>Редагувати профіль</option>
+            <?php if(isset($_SESSION['session_username'])){
+                include("authentification/show_user_menu.php");
+                include("scripts/exit_view.php");
 
-                        </select></p>
+            }
+            if(isset($_SESSION['session_admin'])){
+                 include("scripts/exit_view.php");
+            }
+             ?>
 
 
-                </form>
+            <?php if(!isset($_SESSION['session_username'])){ ?>
+            <div class ="log_relation">
+                <a  href="authentification/login.php" class = "log1 b5radius">Вхід</a><br><br>
+                <a href="authentification/registration.php" class = "log b5radius">Реєстрація</a>
             </div>
-       <?php } ?> 
-            <div>
-                <a  href="login.php" class = "log1 b5radius">Вхід</a><br><br>
-                <a href="registration.php" class = "log b5radius">Реєстрація</a>
-            </div>
+            <?php
+            }
+             ?>
+
 
 
 
@@ -90,9 +91,15 @@ include("conect.php");
 
 
     </div>
-    <div class="footer">
-        Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+<div class="footer">
+        <div class="footer_adm">
+            <a href="admin/adminLogin.php" class = "log2 b5radius">Вхід в панель адміністаратора</a>
+        </div>
 
+        <div class="footer_text">
+            Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+        </div>
+        <div class="clr"></div>
 
     </div>
 

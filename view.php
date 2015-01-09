@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("conect.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ include("conect.php");
                 include("scripts/exit_view.php");
 
             }
-            if(isset($_SESSION['session_admin'])){
+            elseif(isset($_SESSION['session_admin'])){
                  include("scripts/exit_view.php");
             }
              ?>
@@ -81,9 +82,15 @@ include("conect.php");
 
 
     </div>
-    <div class="footer">
-        Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+<div class="footer">
+        <div class="footer_adm">
+            <a href="admin/adminLogin.php" class = "log2 b5radius">Вхід в панель адміністаратора</a>
+        </div>
 
+        <div class="footer_text">
+            Тестовий проект для InternetDevels made by Taras Kostiuk (c)
+        </div>
+        <div class="clr"></div>
 
     </div>
 
