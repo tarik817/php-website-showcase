@@ -1,4 +1,7 @@
+<meta charset="utf-8">
 <?php
+if(!isset($_SESSION)){session_start();} 
+include("../../conect.php");
 if(isset ($_POST['news_go'])){
 	$username= $_POST['username'];
 	$password= $_POST['password'];
@@ -45,7 +48,8 @@ if(isset ($_POST['news_go'])){
 
 	if($save_user==true)
 	{
-		echo "<html><head><meta http-equiv='Refresh' content='0; URL=index.php'></head></html>";
+		 $_SESSION['session_username']=$username;
+		echo "<html><head><meta http-equiv='Refresh' content='0; URL=../../index.php'></head></html>";
 	}else{
 		echo "Користувач не зареєстрований";
 	}

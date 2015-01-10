@@ -7,7 +7,7 @@ include("../conect.php");
 <link href="../css/main.css" rel="stylesheet" type="text/css">
 <div class ="login">
 	<h1>Реєстрація</h1>
-	<form name="loginform" id="loginform" action="" method="POST">
+	<form name="loginform" id="loginform" action="scripts/registration_action.php" method="POST">
 		<p>
 			<label for="user_login">Логін<br />
 				<input type="text" name="username" id="login" class="input" value="" size="20" /></label>

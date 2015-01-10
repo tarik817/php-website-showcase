@@ -13,7 +13,8 @@
                 ';
                 if(isset($_SESSION['session_username'])){
                     if($_SESSION['session_username']==$data["author"]){
-                        echo '<a href ="edit_news_page.php">Редагувати</a>';
+                        echo '<a href ="edit_news_page.php?id='.$data["id"].'">Редагувати  </a>';
+                        echo '<a href ="scripts/delete_news.php?id='.$data["id"].'">Видалити</a>';
                     }
                 }
 
