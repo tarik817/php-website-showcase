@@ -293,10 +293,10 @@ input[id="addNewsSend"]{
 .editCurrentUserFild{
     margin-left: 150px;
 }
-.userfield{
+.userfield li{
     width: 250px;
     margin-left:-30px;
-    height:72px;
+    height:20px;
     border: none;
     box-shadow: inset 0px 1px 3px rgba(0.0.0.0.1);
     padding: 5px 5px;
@@ -333,4 +333,25 @@ input[id="addNewsSend"]{
     margin-top: 200px;
     width: 500px;
     height: 400px;
+}
+.user_data{
+    color: #8E8D85;
+
+}
+.user_data_form{
+    text-align: center;
+    margin: 25px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border: solid 7px #E6E6E6;
+    padding: 25px;
+
+}
+.user_data_form input{
+    margin-left: 0px;
+    margin-top: 4px;
+    padding: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 18px;
 }

@@ -62,11 +62,9 @@ include("../conect.php");
         </div>
     </div>
 
-
     <div class="sidebar">
         <div class="sidebar_menu">
             <a href="../index.php">Головна<a>
-                <a href="users.php">Користувачі<a>
                     <a href="#">Зворотній звязок<a>
 
 
@@ -78,9 +76,15 @@ include("../conect.php");
     </div>
     <div class="content">
 
+
+
         <?php 
-        include ("scripts/users_view.php");
+        include("scripts/current_user_view.php");
         ?>
+
+
+
+
 
 
     </div>
