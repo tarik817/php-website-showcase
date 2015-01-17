@@ -1,9 +1,6 @@
 <?php
 session_start();
 include("../../conect.php");
-
-echo session_name();
-
 if(isset($_POST['enter_go'])){
 	if(!empty($_POST['login']) && !empty($_POST['password'])) {
 	$login= $_POST['login'];
@@ -19,24 +16,16 @@ if(isset($_POST['enter_go'])){
 		 header("Location: ../../admin/admin.php");
 
 	}else{
-	
-	$query= mysqli_query ($conect, "SELECT * FROM users WHERE user = '".$login."'") or die (mysqli_error());
-	$user_data= mysqli_fetch_array($query);
-	
-	
-	
+		$query= mysqli_query ($conect, "SELECT * FROM users WHERE user = '".$login."'") or die (mysqli_error());
+		$user_data= mysqli_fetch_array($query);
 	if($user_data['password']== md5($password)){
-		
-
-    $_SESSION['session_username']=$login;
-    
-
-    /* Перенаправленян на сторінку користувача */
-    header("Location: ../../index.php");
-   
+    	$_SESSION['session_username']=$login;
+    	/* Перенаправленян на сторінку користувача */
+    	header("Location: ../../index.php");
 	}else{
-		?><script>alert("Паролі повинні співпадати.")</script><?php
-
+		?>
+		 <meta charset="utf-8">
+		<script>alert("Ви ввели невірний пароль")</script><?php
 	}
 }
 }
