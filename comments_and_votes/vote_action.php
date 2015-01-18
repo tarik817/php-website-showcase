@@ -31,12 +31,22 @@ function is_vote($article_id){
 	}
 }
 function vote_rating($article_id){
+	$sum = 0.0;
+	$counter=0;
 	include("conect.php");
 	$q3=mysqli_query($conect ,"SELECT * FROM votes WHERE article_id ='$article_id'") or die (mysqli_error());
-	$resulte3=mysqli_fetch_array($q3);
-	$resulte3=$resulte3['vote_rating'];
-	//виводить тільки першу оцінку, потрібно переробити щоб виводило седню оцінку, або суму.
-	return $resulte3;
+	while($resulte3=mysqli_fetch_array($q3)){
+		$resulte3=$resulte3['vote_rating'];
+
+		$sum += $resulte3;
+		$counter++;
+		}
+	$sum= $sum/$counter;
+	$sum= mb_substr($sum, 0, 15);
+	$position = mb_strrpos($sum, '.', 'UTF-8');
+	echo "$position";
+	$sum= mb_substr($sum, 0, $position+2);
+	return $sum;
 }
 function delete_vote($user, $article_id){
 	include("../conect.php");
